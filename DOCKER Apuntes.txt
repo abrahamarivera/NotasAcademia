@@ -1,0 +1,67 @@
+DOCKER
+ 
+Crear y ejecutar un contenedor:
+docker run <opciones> <imagen>
+ 	-d {que se ejecute en segundo plano}
+	-it {entrar en el docker}
+	--rm {eliminar al finalizar}
+	--name <nombre> {dar un nombre al contenedor}
+	--network <nombre network> {asignar una network}
+
+docker run -d --name my-nginx nginx
+Esto ejecuta un contenedor en segundo plano (-d) a partir de la imagen nginx y lo nombra my-nginx.
+ 
+Listar contenedores en ejecución:
+docker ps
+ 
+Para ver todos los contenedores, incluyendo los detenidos:
+docker ps -a
+ 
+Detener un contenedor:
+docker stop <nombre_o_id>
+docker kill <nombre_o_id>
+ 
+Iniciar un contenedor detenido:
+docker start <nombre_o_id>
+ 
+Eliminar un contenedor:
+docker rm <nombre_o_id>
+Para eliminar un contenedor que está en ejecución, primero debes detenerlo.
+
+Eliminar una image:
+docker rmi <nombre o id>
+ 
+ 
+Para ejecutar un comando dentro de un contenedor, puedes usar:
+docker exec -it <nombre_o_id> <comando>
+ 
+docker exec <nombre del contenedor> /bin/bash
+
+docker build -t <nombre:tag>
+
+Comandos en Dockerfile (Dockerfile crea una imagen)
+	-WORKDIR {cambiar a directorio dentro del contenedor}
+	-COPY {directorio del host} {directorio del contenedor}
+
+Listar redes de los docker
+docker network ls
+
+Ver informacion de un contenedor
+docker inspect <nombre o id>
+
+Crear una network
+docker network create <nombre>
+
+Como se routean los puertos
+<puerto maquina host> : <puerto container>
+
+Construir una imagen con compose
+docker-compose build <etiqueta> {si se deja solo levanta todas las etiquetas}
+
+Dar de alta el container
+docker-compose up <etiqueta>  {si se deja solo levanta todas las etiquetas}
+
+Crear un volumen en docker-compose.yml
+volume:
+  - <path de host> : <path app en container>
+

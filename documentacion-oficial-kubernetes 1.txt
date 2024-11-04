@@ -1,0 +1,47 @@
+
+K3s: https://rancher.com/docs/k3s/latest/en/
+MicroK8s: https://microk8s.io/docs
+Kind (Kubernetes IN Docker): https://kind.sigs.k8s.io/
+K3d (K3s en Docker): https://k3d.io/
+Minikube: https://minikube.sigs.k8s.io/docs/
+
+Crear un Pod con kubectl: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run
+kubectl get pods: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
+kubectl describe pod: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
+kubectl get pods -o wide: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
+kubectl edit pod: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#edit
+
+Crear y gestionar ReplicaSet: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+
+Crear y gestionar un Deployment: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+kubectl rollout status: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout
+kubectl rollout history: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout
+Estrategia de despliegue (Recreate, RollingUpdate): https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#deployment-strategy
+kubectl rollout undo: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout
+kubectl apply -f con el flag --record: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
+kubectl set image: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#set
+
+Calico: https://projectcalico.docs.tigera.io/
+Flannel: https://github.com/flannel-io/flannel#flannel
+Cilium: https://docs.cilium.io/en/stable/
+
+Actualización y rollback en Kubernetes: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment
+
+Servicios (NodePort, ClusterIP): https://kubernetes.io/docs/concepts/services-networking/service/
+
+Volúmenes en Kubernetes: https://kubernetes.io/docs/concepts/storage/volumes/
+
+Ingress en Kubernetes: https://kubernetes.io/docs/concepts/services-networking/ingress/
+
+StatefulSet en Kubernetes: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+
+Liveness y Readiness Probes: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+
+Límites y requests en Kubernetes: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+
+Secrets en Kubernetes: https://kubernetes.io/docs/concepts/configuration/secret/
+
+ConfigMaps en Kubernetes: https://kubernetes.io/docs/concepts/configuration/configmap/
+
+Servicios de tipo LoadBalancer: https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer

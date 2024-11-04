@@ -1,0 +1,14 @@
+Introducción a Docker Compose: https://docs.docker.com/compose/
+Guía de referencia de comandos de Docker Compose: https://docs.docker.com/compose/reference/
+
+Volúmenes en Docker: https://docs.docker.com/storage/volumes/
+
+Tipos de montajes: Volúmenes, Bind mounts, tmpfs: https://docs.docker.com/storage/
+
+Redes en Docker: https://docs.docker.com/network/
+Tipos de redes en Docker: https://docs.docker.com/network/#network-drivers
+
+Construcción de imágenes usando Docker Compose: https://docs.docker.com/compose/compose-file/build/
+
+Configuración y uso de un Docker Registry: https://docs.docker.com/registry/
+Configuración de un registro privado de Docker: https://docs.docker.com/registry/deploying/
