@@ -1,0 +1,80 @@
+services:
+  vote:
+    image: uledwin/vote-app:vote
+    build:
+      context: ./vote
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ./vote:/usr/local/app
+    ports:
+      - 3000:80
+    healthcheck:
+      test: ["CMD","curl", "-f", "http://localhost"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - back-tier
+      - front-tier
+
+  result:
+    image: uledwin/vote-app:result
+    build:
+      context: ./result
+      dockerfile: Dockerfile
+    ports:
+      - 3001:80
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - back-tier
+      - front-tier
+
+  worker:
+    image: uledwin/vote-app:worker
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    networks:
+      - back-tier
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - ./healthchecks:/healthchecks
+    healthcheck:
+      test: /healthchecks/redis.sh
+      interval: 5s
+    networks:
+      - back-tier
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./healthchecks:/healthchecks
+    healthcheck:
+      test: /healthchecks/postgres.sh
+      interval: 5s
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+networks:
+  front-tier:
+  back-tier:
