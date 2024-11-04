@@ -65,3 +65,9 @@ Crear un volumen en docker-compose.yml
 volume:
   - <path de host> : <path app en container>
 
+extraer los pods en un kubernete
+kubectl get pods
+
+aplicar el yaml
+kubectl apply -f <nombre del archivo>.yaml (es valido tanto para pods como replicasets)
+
