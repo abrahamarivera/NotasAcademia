@@ -1,3 +1,5 @@
+KILLERCODA.com
+
 DOCKER
  
 Crear y ejecutar un contenedor:
@@ -65,9 +67,45 @@ Crear un volumen en docker-compose.yml
 volume:
   - <path de host> : <path app en container>
 
-extraer los pods en un kubernete
+Extraer los pods en un kubernete
 kubectl get pods
 
-aplicar el yaml
+Aplicar el yaml
 kubectl apply -f <nombre del archivo>.yaml (es valido tanto para pods como replicasets)
 
+Ver detalles del pod
+kubectl describe <nombre pod>
+kubectl <nombre pod> -o yaml
+
+Borrar un pod
+kubectl delete pod <nombre pod>
+kubectl delete -f <nombre pod>.yaml
+
+Ver definiciones o versiones
+kubectl api-resources
+
+Editar replicaset
+kubectl edit replicaset <nombre del replica>
+kubectl get replicaset <nombre replica> -o yaml >> rs.yaml
+
+Cambiar las replicas en el yaml
+kubectl scale replicaset <nombre replicaset> --replicas=0
+
+PARA CREAR
+kubectl create deployment nombre-del-deployment --image=nginx
+ 
+PARA ESCALAR
+kubectl scale deployment nombre-del-deployment --replicas=5
+ 
+PARA ELIMINAR EL DEPLOY
+kubectl delete deployment nombre-del-deployment
+
+Ver los deploy
+kubectl get deployment <nombre del deploy>
+
+Editar algo de los Kubernetes
+kubectl edit deployment my-first-deployment
+kubectl set image deployment my-first-deployment nginx=httpd:alpine
+
+Ejecutar un comando en un contenedor de k8s
+kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...]
